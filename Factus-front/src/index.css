@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+body {
+  /*background:rgba(1, 26, 58, 0.986);*/
+    @apply h-14 bg-gradient-to-r from-stone-950 to-sky-950
+}
