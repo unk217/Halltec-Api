@@ -12,7 +12,8 @@ function App() {
     <NavBar/>
     <Routes>
       <Route path= '/invoices' element={<Invoices/>}/>
-      <Route path='token' element={<Auth/>}/>
+      <Route path='/token' element={<Auth/>}/>
+      <Route path='/municipalities' element={<Municipalities/>}/>
     </Routes>
     </BrowserRouter>
   )

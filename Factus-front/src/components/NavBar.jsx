@@ -8,7 +8,7 @@ const NavBar = ()=> {
         <ul className='flex justify-between space-x-8 w-10'>
             <Li><Link to="/token">Auth</Link></Li>
             <Li><Link to="/invoices">Facturas</Link></Li>
-            <Li><Link></Link></Li>
+            <Li><Link to="/municipalities">Municipios</Link></Li>
         </ul>
     </nav>
   )
