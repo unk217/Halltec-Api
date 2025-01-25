@@ -33,9 +33,9 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <h1>Autenticación</h1>
-      <button className='bg bg-sky-400' onClick={authenticate}>Generar Token</button>
+    <div className='px-2 py-4'>
+      
+      <button className='bg bg-sky-400 hove rounded-lg hover:bg-blue-800 cursor-pointer p-2 text-cyan-50 font-bold' onClick={authenticate}>Generar Token</button>
       {accessToken && <p>Access Token: {accessToken}</p>}
       {error && <p style={{ color: 'red' }}>Error: {error}</p>}
     </div>

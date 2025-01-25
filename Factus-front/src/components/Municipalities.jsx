@@ -10,7 +10,7 @@ function Municipalities() {
       const accessToken = localStorage.getItem('access_token');
       console.log(accessToken)
       try{
-        const apiUrl =`${import.meta.env.VITE_BASE_URL}/v1/municipalities?name=`
+        const apiUrl =`${import.meta.env.VITE_BASE_URL}/v1/bills?filter[identification]&filter[names]&filter[number]&filter[prefix]&filter[reference_code]&filter[status]`
         const res = await axios.get(apiUrl,
           {headers:{
             Authorization: `Bearer ${accessToken}`
@@ -30,7 +30,10 @@ function Municipalities() {
 
   return (
     <div>
-      <h1 className='flex justify-center text-white font-bold p-4'>Municipalities</h1>
+      <h1 className='flex justify-center text-white font-bold p-4'>Facturas</h1>
+
+
+
     </div>
   )
 }
