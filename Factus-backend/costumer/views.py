@@ -14,11 +14,26 @@ class CostumerView(viewsets.ModelViewSet):
         costumers = self.get_queryset()
         serializer = self.get_serializer(costumers, many=True)
         
+        tipo_documento_choices = [
+            {'value': value, 'label': label}
+            for value, label in Costumer.DOCUMENT_TYPE_ID
+        ]
+        
+        ptype_choices = [
+            {'value': value, 'label': label}
+            for value, label in Costumer.PERSON_TYPE
+        ]
+        
+        taxtype_choices = [
+            {'value': value, 'label': label}
+            for value, label in Costumer.TAX_TYPE
+        ]
+        
         response_data = {
             'choices': {
-                'document_type': dict(Costumer.DOCUMENT_TYPE_ID),
-                'p_type': dict(Costumer.PERSON_TYPE),
-                'tax_type': dict(Costumer.TAX_TYPE),
+                'document_type': tipo_documento_choices,
+                'p_type': ptype_choices,
+                'tax_type': taxtype_choices,
             },
             'costumers': serializer.data,
             

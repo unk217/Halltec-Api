@@ -30,14 +30,18 @@ function CreateInvoice() {
       try {
         const apiUrl = "http://127.0.0.1:8000/costumer/api/v1/costumer/";
         const res = await axios.get(apiUrl);
-
-        const idcos = res.data.map((ids) => ({
+        console.log(res)
+        {/*const idcos = res.data.map((ids) => ({
           name: ids.names,
           //idChoice: ids.tipo_documento_display,
         }));
         setIdcos(idcos);
-        const idchoices = res.data[0].tipo_documento_display;
-        setIdchoices(idchoices);
+        */}
+        
+        const idchoices = Object.entries(res.data.choices.document_type || {}).map(
+          ([value, label])=>({value, label}))
+
+        setIdchoices(idchoices)
         console.log(res);
         console.log(idchoices);
       } catch (error) {
@@ -69,7 +73,7 @@ function CreateInvoice() {
         }))
 
         setMun(mun);
-        console.log(res);
+        //console.log(res);
       } catch (error) {
         console.log("error data", error);
       }
@@ -95,7 +99,7 @@ function CreateInvoice() {
       <label className="text-white font-bold py-4">Tipo de documento</label>
       <Select
         defaultValue={idchoices[1]}
-        options={idchoices.map((i) => ({ label: i[1], value: i[0] }))}
+        options={idchoices}
         onChange={handleSelectChange}
       />
       <label className="text-white font-bold py-4">Municipios</label>
