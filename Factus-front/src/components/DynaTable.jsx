@@ -13,7 +13,7 @@ import {  Button } from "./UI";
 //import Navigation from './Navigation';
 
 
-function Dyna_table({columns, data}) {
+function Dynatable({columns, data}) {
 
 
 
@@ -104,4 +104,4 @@ function Dyna_table({columns, data}) {
   )
 }
 
-export default Dyna_table
+export default Dynatable

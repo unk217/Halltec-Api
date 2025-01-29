@@ -4,6 +4,7 @@ import Auth from './components/Auth'
 import Municipalities from './components/Municipalities';
 import NavBar from './components/NavBar';
 import Invoices from './components/Pages/Invoices';
+import CreateInvoice from './components/Pages/CreateInvoice';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path= '/invoices' element={<Invoices/>}/>
       <Route path='/token' element={<Auth/>}/>
       <Route path='/municipalities' element={<Municipalities/>}/>
+      <Route path='/addinv' element={<CreateInvoice/>}/>
     </Routes>
     </BrowserRouter>
   )
